@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Izzeldin Mohammed;Ahmed;;;
+FN:Ahmed Izzeldin Mohammed
+NICKNAME:伊萨丁
+TITLE:project manager
+ORG:ANTONOIL
+TEL;TYPE=CELL,NON:(964783) 497-0354
+EMAIL;TYPE=WORK:ahmed.l@antonoil.com
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/ahmed-ezoo
+ADR;TYPE=WORK:;;iraq-basra;;;;
+X-WECHAT:A_Ezoo92
+PHOTO;VALUE=URI:https://raw.githubusercontent.com/UnvEr1ch/Vcard/main/logo.png
+END:VCARD

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ahmed Izzeldin Mohammed - ANTONOIL</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{min-height:100vh;background:linear-gradient(135deg,#0f2c4e,#1a4a7a,#0f2c4e);display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',Arial,sans-serif;padding:20px;}
+.card{background:linear-gradient(145deg,#fff,#f0f4f8);border-radius:24px;width:100%;max-width:400px;box-shadow:0 30px 80px rgba(0,0,0,.4);overflow:hidden;}
+.card-header{background:linear-gradient(135deg,#1a3a5c,#2563a8);padding:32px 30px 28px;position:relative;overflow:hidden;}
+.card-header::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06);}
+.logo-container{display:flex;align-items:center;gap:18px;margin-bottom:22px;position:relative;z-index:1;}
+.company-logo{width:140px;height:140px;object-fit:contain;}
+.company-name{font-size:15px;color:rgba(255,255,255,.9);letter-spacing:1.2px;font-weight:700;}
+.name-en{font-size:28px;font-weight:700;color:#fff;letter-spacing:3px;position:relative;z-index:1;margin-bottom:6px;}
+.name-zh{font-size:18px;color:rgba(255,255,255,.75);letter-spacing:4px;position:relative;z-index:1;font-weight:500;}
+.title-badge{display:inline-block;margin-top:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:12px;padding:5px 16px;border-radius:20px;position:relative;z-index:1;font-weight:600;}
+.card-body{padding:20px 28px;}
+.info-item{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid #eef2f7;}
+.info-item:last-child{border-bottom:none;}
+.info-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1a3a5c,#2563a8);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.info-label{font-size:10px;color:#888;font-weight:700;text-transform:uppercase;margin-bottom:2px;}
+.info-value{font-size:13.5px;color:#1a3a5c;font-weight:600;}
+.info-value.small{font-size:12px;}
+.qr-section{background:#f8fafc;border-top:1px solid #e2e8f0;padding:22px 28px 26px;text-align:center;}
+.qr-hint{font-size:12px;color:#999;margin-bottom:14px;}
+.qr-frame{display:inline-block;background:white;border-radius:16px;padding:10px;box-shadow:0 6px 24px rgba(0,0,0,.12);cursor:pointer;}
+.qr-scan-tip{margin-top:10px;font-size:11px;color:#bbb;}
+.sheet-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;backdrop-filter:blur(3px);align-items:flex-end;justify-content:center;}
+.sheet-overlay.active{display:flex;}
+.sheet{background:white;border-radius:24px 24px 0 0;padding:18px 18px 36px;width:100%;max-width:480px;animation:slideUp .35s cubic-bezier(.34,1.56,.64,1);}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sheet-handle{width:40px;height:4px;background:#e0e0e0;border-radius:2px;margin:0 auto 16px;}
+.sheet-title{font-size:16px;font-weight:700;color:#1a3a5c;text-align:center;margin-bottom:3px;}
+.sheet-sub{font-size:12px;color:#aaa;text-align:center;margin-bottom:18px;}
+.link-list{display:flex;flex-direction:column;gap:9px;}
+.link-btn{display:flex;align-items:center;gap:13px;padding:12px 16px;border-radius:14px;text-decoration:none;font-size:14px;font-weight:600;width:100%;}
+.btn-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.btn-text{flex:1;}
+.btn-label{font-size:11px;font-weight:400;opacity:.65;margin-top:1px;}
+.btn-wechat{background:#f0faf0;color:#2e7d32;}.btn-wechat .btn-icon{background:#c8e6c9;}
+.btn-whatsapp{background:#e3f2fd;color:#1565c0;}.btn-whatsapp .btn-icon{background:#bbdefb;}
+.btn-phone{background:#fce4ec;color:#c62828;}.btn-phone .btn-icon{background:#ffcdd2;}
+.btn-phone2{background:#fdf2f8;color:#86198f;}.btn-phone2 .btn-icon{background:#f5d0fe;}
+.btn-email{background:#fff8e1;color:#b45309;}.btn-email .btn-icon{background:#ffe082;}
+.btn-linkedin{background:#e8eaf6;color:#283593;}.btn-linkedin .btn-icon{background:#c5cae9;}
+.btn-web{background:#f3e5f5;color:#6a1b9a;}.btn-web .btn-icon{background:#e1bee7;}
+.btn-vcf{background:linear-gradient(135deg,#1a3a5c,#2563a8);color:#fff;}.btn-vcf .btn-icon{background:rgba(255,255,255,.2);}
+.btn-cancel{margin-top:10px;width:100%;padding:13px;border:1.5px solid #e0e0e0;border-radius:14px;background:white;color:#888;font-size:14px;cursor:pointer;}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="card-header">
+<div class="logo-container">
+<img src="https://raw.githubusercontent.com/UnvEr1ch/Vcard/main/logo.png" alt="Logo" class="company-logo">
+<div class="company-name">ANTONOIL</div>
+</div>
+<div class="name-en">Ahmed Izzeldin Mohammed</div>
+<div class="name-zh">伊萨丁</div>
+<div class="title-badge">project manager</div>
+</div>
+<div class="card-body"><div class="info-item"><div class="info-icon">&#128222;</div><div><div class="info-label">Mobile NON</div><div class="info-value">(964783) 497-0354</div></div></div><div class="info-item"><div class="info-icon">&#128231;</div><div><div class="info-label">Email</div><div class="info-value small">ahmed.l@antonoil.com</div></div></div><div class="info-item"><div class="info-icon">&#128205;</div><div><div class="info-label">Location</div><div class="info-value">iraq-basra</div></div></div></div>
+<div class="qr-section">
+<div class="qr-hint">Scan to connect with me</div>
+<div class="qr-frame" onclick="openSheet()"><div id="qr"></div></div>
+<div class="qr-scan-tip">Tap QR code to choose contact method</div>
+</div>
+</div>
+<div class="sheet-overlay" id="sheet" onclick="closeSheet(event)">
+<div class="sheet" onclick="event.stopPropagation()">
+<div class="sheet-handle"></div>
+<div class="sheet-title">Hi, I am Ahmed Izzeldin Mohammed</div>
+<div class="sheet-sub">project manager - ANTONOIL</div>
+<div class="link-list"><a class="link-btn btn-wechat" href="weixin://dl/chat?A_Ezoo92"><div class="btn-icon">&#128172;</div><div class="btn-text"><div>WeChat</div><div class="btn-label">A_Ezoo92</div></div></a><a class="link-btn btn-whatsapp" href="https://wa.me/9647834970354"><div class="btn-icon">&#128242;</div><div class="btn-text"><div>WhatsApp</div><div class="btn-label">(964783) 497-0354</div></div></a><a class="link-btn btn-phone2" href="tel:+9647834970354"><div class="btn-icon">&#128222;</div><div class="btn-text"><div>Call NON</div><div class="btn-label">(964783) 497-0354</div></div></a><a class="link-btn btn-email" href="mailto:ahmed.l@antonoil.com"><div class="btn-icon">&#128231;</div><div class="btn-text"><div>Email</div><div class="btn-label">ahmed.l@antonoil.com</div></div></a><a class="link-btn btn-linkedin" href="https://www.linkedin.com/in/ahmed-ezoo" target="_blank"><div class="btn-icon">&#128188;</div><div class="btn-text"><div>LinkedIn</div><div class="btn-label">View Profile</div></div></a><a class="link-btn btn-vcf" href="ahmed-izzeldin-mohammed.vcf" download><div class="btn-icon">&#128196;</div><div class="btn-text"><div>Save to Contacts</div><div class="btn-label">Add to phone address book</div></div></a></div>
+<button class="btn-cancel" onclick="closeSheet()">Cancel</button>
+</div>
+</div>
+<script>
+window.onload=function(){
+new QRCode(document.getElementById('qr'),{text:window.location.href,width:140,height:140,colorDark:'#1a3a5c',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+if(!sessionStorage.getItem('v')){setTimeout(function(){openSheet();sessionStorage.setItem('v','1');},500);}
+};
+function openSheet(){document.getElementById('sheet').classList.add('active');}
+function closeSheet(e){if(!e||e.target===document.getElementById('sheet')){document.getElementById('sheet').classList.remove('active');}}
+</script>
+</body>
+</html>
